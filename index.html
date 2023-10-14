@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Forcast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <style>
+    body {
+      background-image: url('abc.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+  } 
+    #cityName{
+      font-size: 2em; 
+    }
+    #temp_c {
+      font-size: 2em; /* Adjust the size as needed */
+    }
+  
+    #text {
+      font-size: 1em; /* Adjust the size as needed */
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Weather App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About this App</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Usage Guide</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col-12 col-md-4">
+          <!-- <div class="card mb-4 rounded-3 shadow-sm"> -->
+            <div class="card-header py-3">
+              <h2 class="my-0 fw-normal"><b><span id="cityName"></b></h2>
+              <h4 class="my-0 fw-normal"><span id="country"></span></h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled mt-3 mb-4">
+                <img id="weatherIcon" src="" alt="Weather Icon">
+                <h2 class="card-title pricing-card-title"><span id="temp_c"></span></h2>   <h3><span id="text"></span></h3> 
+                <li><b></b><span id="max_temp"></span>°C / <span id="min_temp"></span>°C</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- <h2 class="display-6 text-center mb-4">Compare plans</h2> -->
+    
+        <div class="table-responsive">
+          <div class="row justify-content-center">
+            <div class="col">
+              <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 45%;"></th>
+                <th style="width: 55%;"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Feels_like</th>
+                <td><span id="feelslike_c"></span>°C</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Humidity</th>
+                <td><span id="humidity"></span>%</td>
+              </tr>
+              <!-- <tr>
+                <th scope="row" class="text-start">Max_temp</th>
+                <td><span id="temp_max"></span>°C</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Min_temp</th>
+                <td><span id="temp_min"></span>°C</td>
+              </tr> -->
+              <tr>
+                <th scope="row" class="text-start">Sunrise</th>
+                <td><span id="sunrise"></span></td>
+          
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Sunset</th>
+                <td><span id="sunset"></span></td>
+      
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Wind_speed</th>
+                <td><span id="wind_speed"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <Script src="script.js"></Script>
+  </body>
+</html>
