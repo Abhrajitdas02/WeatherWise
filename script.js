@@ -16,6 +16,7 @@ const getWeather = (city) => {
       current = response.current;
       condition = current.condition;
       text.innerHTML = condition.text;
+      console.log(text.innerHTML);
       const icon = current.condition.icon;
       imgElement = document.getElementById("weatherIcon");
       imgElement.src = "https:" + icon;
@@ -27,10 +28,30 @@ const getWeather = (city) => {
       humidity.innerHTML = current.humidity;
 
       country.innerHTML = response.location.country;
+      var body = document.body;
+      if (text.innerHTML.toLowerCase().includes("rain"))
+        text.innerHTML = "Rainy";
+      if (text.innerHTML.toLowerCase().includes("mist"))
+        text.innerHTML = "Mist";
+      if (text.innerHTML.toLowerCase().includes("snow"))
+        text.innerHTML = "Snow";
+      if (text.innerHTML.toLowerCase().includes("cloud"))
+        text.innerHTML = "cloudy";
+      const backgroundImages = {
+        Rainy: "url(Rain.gif)",
+        Mist: "url(Mist.jpg)",
+        Sunny: "url(Sunny.jpg)",
+        Snow: "url(Snow.gif",
+        cloudy: "url(cloudy.gif)",
+      };
+      if (backgroundImages[text.innerHTML]) {
+        body.style.backgroundImage = backgroundImages[text.innerHTML];
+      } else {
+        console.log("Condition not found");
+      }
     })
     .catch((err) => console.error(err));
 };
-
 const option = {
   method: "GET",
   headers: {
