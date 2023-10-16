@@ -35,14 +35,15 @@ const getWeather = (city) => {
         text.innerHTML = "Mist";
       if (text.innerHTML.toLowerCase().includes("snow"))
         text.innerHTML = "Snow";
-      if (text.innerHTML.toLowerCase().includes("cloud"))
-        text.innerHTML = "cloudy";
+      if (text.innerHTML.toLowerCase().includes("clear"))
+        text.innerHTML = "Clear";
       const backgroundImages = {
         Rainy: "url(Rain.gif)",
         Mist: "url(Mist.jpg)",
         Sunny: "url(Sunny.jpg)",
         Snow: "url(Snow.gif",
         cloudy: "url(cloudy.gif)",
+        Clear: "url(Sunny.jpg)",
       };
       if (backgroundImages[text.innerHTML]) {
         body.style.backgroundImage = backgroundImages[text.innerHTML];
@@ -118,5 +119,5 @@ submit.addEventListener("click", (e) => {
   getWeather1(city.value);
 });
 
-getWeather("Kolkata");
-getWeather1("Kolkata");
+getWeather("Bhubaneswar");
+getWeather1("Bhubaneswar");
